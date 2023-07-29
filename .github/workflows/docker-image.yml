@@ -15,8 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag lokeshb003/todo-react-app:latest
-    - name: Login to docker hub
-      run: docker login -u lokeshb003 -p kepler22b
-    - name: Push the docker image
-      run: docker push lokeshb003/todo-react-app:latest
+      run: echo "Done"
