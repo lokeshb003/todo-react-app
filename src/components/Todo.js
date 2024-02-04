@@ -82,7 +82,7 @@ function Todo() {
             </div>
             <div className='portfolio'>
                 <p id='lokesh'>Created by Lokesh B</p>
-                <a id='portfolio-id' href='https://www.lokii.tech'>Checkout my Portfolio</a>        
+                <a id='portfolio-id' href='https://www.lokeshb.xyz'>Checkout my Portfolio</a>        
             </div>
         </div>
     );
