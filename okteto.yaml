@@ -1,0 +1,12 @@
+name: react-app
+
+deploy:
+  - kubectl apply -f deployment.yaml
+
+dev:
+  frontend:
+    command: ["npm", "start"]
+    sync:
+      - .:/root
+    forward:
+      - 3000:3000
