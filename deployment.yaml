@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: todo-app
+  template:
+    metadata:
+      labels:
+        app: todo-app
+    spec:
+      containers:
+      - name: todo-app
+        image: ghcr.io/lokeshb003/todo-react-app:master
+        ports:
+        - containerPort: 3000  # Match the EXPOSE port in your Dockerfile
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: updated-portfolio-service
+spec:
+  selector:
+    app: updated-portfolio
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000  # Match the EXPOSE port in your Dockerfile
+  type: LoadBalancer
