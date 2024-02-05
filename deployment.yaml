@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: todo-deployment
+  name: todo-app-deployment
 spec:
   replicas: 1
   selector:
@@ -22,10 +22,10 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: updated-portfolio-service
+  name: todo-app-service
 spec:
   selector:
-    app: updated-portfolio
+    app: todo-app
   ports:
     - protocol: TCP
       port: 80
